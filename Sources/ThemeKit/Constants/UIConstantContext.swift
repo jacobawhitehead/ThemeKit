@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum UIConstantContext {
+public enum UIConstantContext {
     case padding
     case margin
     case shadowRadius

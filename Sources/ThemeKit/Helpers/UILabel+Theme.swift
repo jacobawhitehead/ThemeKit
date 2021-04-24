@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     
     @discardableResult
     func color(_ context: ColorContext) -> Self {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ColorContext {
+public enum ColorContext {
     case brandPrimary
     case brandSecondary
     

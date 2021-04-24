@@ -7,25 +7,33 @@
 
 import UIKit
 
-protocol ColorProvider {
+public protocol ColorProvider {
     func color(for context: ColorContext) -> UIColor
 }
 
-protocol UIConstantProvider {
+public protocol UIConstantProvider {
     func constant(for context: UIConstantContext) -> CGFloat
 }
 
-class Theme {
+public class Theme {
     
-    private static var colorProvider: ColorProvider = StandardColorProvider()
-    private static var constantProvider: UIConstantProvider = StandardUIConstantProvider()
+    private static var colorProvider: ColorProvider?
+    private static var constantProvider: UIConstantProvider?
     
-    static func color(for context: ColorContext) -> UIColor {
-        colorProvider.color(for: context)
+    public static func color(for context: ColorContext) -> UIColor {
+        colorProvider?.color(for: context) ?? .black
     }
     
-    static func constant(for context: UIConstantContext) -> CGFloat {
-        constantProvider.constant(for: context)
+    public static func constant(for context: UIConstantContext) -> CGFloat {
+        constantProvider?.constant(for: context) ?? 0
+    }
+    
+    public static func setColorProvider(_ provider: ColorProvider) {
+        colorProvider = provider
+    }
+    
+    public static func setUIConstantProvider(_ provider: UIConstantProvider) {
+        constantProvider = provider
     }
     
 }
