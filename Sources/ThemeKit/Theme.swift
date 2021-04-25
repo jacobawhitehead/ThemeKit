@@ -35,7 +35,7 @@ public class Theme {
     }
     
     public static func font(for context: TextContext) -> UIFont {
-        fontProvider?.font(for: context) ?? .preferredFont(forTextStyle: .body)
+        fontProvider?.font(for: context) ?? .preferredFont(forTextStyle: context.textStyle)
     }
     
     // MARK: - Setters
