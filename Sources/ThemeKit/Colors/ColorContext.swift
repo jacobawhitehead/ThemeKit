@@ -22,4 +22,6 @@ public enum ColorContext {
     case backgroundPrimary
     case backgroundSecondary
     case backgroundTertiary
+    
+    case shadow
 }
