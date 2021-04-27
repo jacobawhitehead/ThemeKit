@@ -20,7 +20,7 @@ public enum TextContext: String, CaseIterable {
     case title2
     case title3
     
-    var textStyle: UIFont.TextStyle {
+    public var textStyle: UIFont.TextStyle {
         switch self {
         case .body: return .body
         case .callout: return .callout
